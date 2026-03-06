@@ -100,6 +100,7 @@
 		<copy tofile="pom-core.xml" file="pom-core-model.xml" overwrite="true">
 			<filterset>
 				<filter token="VERSION" value="${version}"/>
+				<filter token="GROUP_ID" value="${groupId}"/>
 			</filterset>
 		</copy>
 	</target>
@@ -108,6 +109,7 @@
 		<copy tofile="pom.xml" file="pom-model.xml" overwrite="true">
 			<filterset>
 				<filter token="VERSION" value="${version}"/>
+				<filter token="GROUP_ID" value="${groupId}"/>
 			</filterset>
 		</copy>
 	</target>
