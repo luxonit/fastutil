@@ -9,6 +9,10 @@ on:
     branches: [ "master" ]
   workflow_dispatch:
 
+permissions:
+  checks: write
+  pull-requests: write
+
 jobs:
   build:
 
@@ -30,6 +34,28 @@ jobs:
     - name: Test with Ant
       run: ant junit -noinput -buildfile build.xml
     - name: Split JARs
-      run: split.sh
+      run: ./split.sh
     - name: Build OSGI-REST with Ant
       run: ant osgi-rest -noinput -buildfile build.xml
+    - name: Publish Test Report
+      uses: mikepenz/action-junit-report@v6
+      with:
+        commit: ${{github.event.action.head_sha}}
+        report_paths: '**/fastutil/fastutil/reports/TEST-*.xml'
+        # Optional: if you want to add PR comments from workflow_run context  
+        comment: true
+        pr_id: ${{ github.event.action.pull_requests[0].number }}
+
+    - name: Upload JAR Artifacts
+      uses: actions/upload-artifact@v4
+      with:
+        name: fastutil-jar-artifacts
+        path: '**/fastutil/fastutil/*.jar'
+
+    - name: Upload Test Report
+      uses: actions/upload-artifact@v4
+      if: always() # always run even if the previous step fails
+      with:
+        name: junit-test-results
+        path: '**/fastutil/fastutil/reports/TEST-*.xml'
+        retention-days: 14
