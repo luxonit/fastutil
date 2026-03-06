@@ -12,10 +12,19 @@ on:
 permissions:
   checks: write
   pull-requests: write
+  contents: read
+  packages: write
 
 jobs:
   build:
     runs-on: ubuntu-latest
+    env:
+      MAVEN_GROUP_ID: luxonit
+      MAVEN_SNAPSHOTS_REPOSITORY_ID: ${{ secrets.MAVEN_SNAPSHOTS_REPOSITORY_ID }}
+      MAVEN_SNAPSHOTS_REPOSITORY_URL: ${{ secrets.MAVEN_SNAPSHOTS_REPOSITORY_URL }}
+      MAVEN_STAGING_REPOSITORY_ID: ${{ secrets.MAVEN_STAGING_REPOSITORY_ID }}
+      MAVEN_STAGING_REPOSITORY_URL: ${{ secrets.MAVEN_STAGING_REPOSITORY_URL }}
+      
     name: Java CI Build
     steps:
     - uses: actions/checkout@v4
@@ -26,6 +35,9 @@ jobs:
       with:
         java-version: '21'
         distribution: 'corretto'
+        server-id: github
+        server-username: GITHUB_ACTOR
+        server-password: GITHUB_TOKEN
         
     - name: Pull Java Sources
       run: make sources
@@ -47,6 +59,12 @@ jobs:
       if: false #Disabled for now
       run: ant osgi-rest -noinput -buildfile build.xml
       
+    - name: Publish with Ant
+      run: ant stage
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}      
+        GITHUB_ACTOR: ${{ github.actor }}
+        
     - name: Publish Test Report
       uses: mikepenz/action-junit-report@v6
       if: always() 
