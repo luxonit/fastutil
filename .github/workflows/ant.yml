@@ -52,7 +52,7 @@ jobs:
       if: always() 
       with:
         commit: ${{github.event.action.head_sha}}
-        report_paths: '**/fastutil/reports/TEST-*.xml'
+        report_paths: '**/reports/TEST-*.xml'
         # Optional: if you want to add PR comments from workflow_run context  
         comment: true
         pr_id: ${{ github.event.action.pull_requests[0].number }}
@@ -61,18 +61,18 @@ jobs:
       uses: actions/upload-artifact@v4
       with:
         name: fastutil-jar-artifacts
-        path: '**/fastutil/*.jar'
+        path: '**/*.jar'
         
     - name: Upload Documentation Artifacts
       uses: actions/upload-artifact@v4
       with:
         name: fastutil-docs-artifacts
-        path: '**/fastutil/docs/'
+        path: '**/docs/'
 
     - name: Upload Test Report
       uses: actions/upload-artifact@v4
       if: always() # always run even if the previous step fails
       with:
         name: junit-test-results
-        path: '**/fastutil/reports/TEST-*.xml'
+        path: '**/reports/TEST-*.xml'
         retention-days: 14
