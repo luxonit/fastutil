@@ -276,29 +276,24 @@
 	</target>
 
 	<target name="junit" depends="compile-tests" description="Runs JUnit tests">
-		<junit printsummary="yes"
-            fork="yes"
-            forkmode="perTest"
-            threads="${junit.threads}"
-            haltonfailure="off"
-            haltonerror="off">
-            <classpath location="${build}"/>
-            <classpath location="${src}"/>
-            <classpath location="lib/junit-4.13.jar"/>
-            <classpath location="lib/hamcrest-all-1.3.jar"/>
-            <jvmarg value="-Xmx3G" />
+		<junit printsummary="yes" fork="yes" haltonfailure="off"  haltonerror="off">
+			<classpath location="${build}"/>
+			<classpath location="${src}"/>
+			<classpath location="lib/junit-4.13.jar"/>
+			<classpath location="lib/hamcrest-all-1.3.jar"/>
+			<jvmarg value="-Xmx3G" />
 
-            <assertions><enable/></assertions>
+			<assertions><enable/></assertions>
 
-            <formatter type="xml"/>
-            <formatter type="plain"/>
+			<formatter type="xml"/>
+			<formatter type="plain"/>
 
-            <batchtest fork="yes" todir="${reports}">
-                <fileset dir="${build}">
-                    <include name="**/*Test.class"/>
-                </fileset>
-            </batchtest>
-        </junit> 
+			<batchtest fork="yes" todir="${reports}">
+				<fileset dir="${build}">
+					<include name="**/*Test.class"/>
+				</fileset>
+			</batchtest>
+		</junit>
 
 		<junitreport todir="reports">
 			<fileset dir="reports">
@@ -307,7 +302,7 @@
 			<report todir="reports/html"/>
 		</junitreport>
 	</target>
-
+	
 	<!-- ************		CLEAN		********************* -->
 	<target name="clean">
 		<delete dir="${build}"/>
