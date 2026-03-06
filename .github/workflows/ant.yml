@@ -1,0 +1,36 @@
+# This workflow will build a Java project with Ant
+# For more information see: https://docs.github.com/en/actions/automating-builds-and-tests/building-and-testing-java-with-ant
+
+name: Java CI
+
+on:
+  push:
+    branches: [ "master" ]
+  pull_request:
+    branches: [ "master" ]
+  workflow_dispatch:
+
+jobs:
+  build:
+
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v4
+    - name: Set up JDK 21
+      uses: actions/setup-java@v4
+      with:
+        java-version: '21'
+        distribution: 'corretto'
+    - name: Pull Java Sources
+      run: make sources
+    - name: Build JAR with Ant
+      run: ant jar -noinput -buildfile build.xml
+    - name: Build JAVADOC with Ant
+      run: ant javadoc -noinput -buildfile build.xml
+    - name: Test with Ant
+      run: ant junit -noinput -buildfile build.xml
+    - name: Split JARs
+      run: split.sh
+    - name: Build OSGI-REST with Ant
+      run: ant osgi-rest -noinput -buildfile build.xml
