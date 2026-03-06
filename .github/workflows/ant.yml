@@ -19,7 +19,7 @@ jobs:
   build:
     runs-on: ubuntu-latest
     env:
-      MAVEN_GROUP_ID: luxonit
+      MAVEN_GROUP_ID: ${{ secrets.MAVEN_GROUP_ID }}
       MAVEN_SNAPSHOTS_REPOSITORY_ID: ${{ secrets.MAVEN_SNAPSHOTS_REPOSITORY_ID }}
       MAVEN_SNAPSHOTS_REPOSITORY_URL: ${{ secrets.MAVEN_SNAPSHOTS_REPOSITORY_URL }}
       MAVEN_STAGING_REPOSITORY_ID: ${{ secrets.MAVEN_STAGING_REPOSITORY_ID }}
