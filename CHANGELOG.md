@@ -9,13 +9,21 @@ Upstream project: <https://github.com/vigna/fastutil>
 
 
 
-## [unreleased](https://github.com/luxonit/fastutil/compare/v0.0.0...unreleased)
+## [v1.0.0](https://github.com/luxonit/fastutil/compare/v0.0.0...v1.0.0)
 
 > 2026-05-06
 
 
 
 ### Changes
+
+
+
+- Fix looping changelog
+
+
+
+- update changelog ([#5](https://github.com/luxonit/fastutil/issues/5))
 
 
 
