@@ -1,5 +1,11 @@
-Luxonit fastutil
+# Luxonit fastutil
+
 Copyright 2026 Luxonit GmbH, Frankfurt am Main, Germany
 
 This distribution is based on fastutil, originally developed by Sebastiano Vigna and contributors.
 Upstream project: <https://github.com/vigna/fastutil>
+
+This distribution also includes PrimeFinder.java, added in the Luxonit fork from
+material attributed to JetBrains s.r.o. and contributors, CERN - European
+Organization for Nuclear Research, and Trove-derived modifications. See
+licenses/PRIMEFINDER.LICENSE.

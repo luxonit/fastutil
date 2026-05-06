@@ -9,6 +9,9 @@
 //   supporting documentation. CERN makes no representations about the
 //   suitability of this software for any purpose. It is provided "as is"
 //   without expressed or implied warranty.
+//
+// Added in the Luxonit fork from third-party material.
+// See NOTICE and licenses/PRIMEFINDER.LICENSE for provenance and redistribution notices.
 package it.unimi.dsi.fastutil;
 
 import java.util.Arrays;

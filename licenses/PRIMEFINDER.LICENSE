@@ -1,0 +1,13 @@
+PrimeFinder.java provenance and third-party notices
+
+This file was added in the Luxonit fork from third-party material.
+
+Separate third-party notices are recorded in:
+
+- licenses/PRIMEFINDER.JETBRAINS.LICENSE
+- licenses/PRIMEFINDER.CERN.LICENSE
+
+Additional provenance note from the source header:
+
+Modified for Trove to use the java.util.Arrays sort/search
+algorithms instead of those provided with colt.
