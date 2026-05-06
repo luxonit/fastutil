@@ -4,23 +4,12 @@ info:
   title: CHANGELOG
   repository_url: https://github.com/luxonit/fastutil
 options:
+  tag_filter_pattern: '^v'
+  sort: semver
   commits:
-    # filters:
-    #   Type:
-    #     - sparkles
-    #     - bug
-    #     - zap
-    #     - recycle
-  commit_groups:
-    # title_maps:
-    #   sparkles: Features
-    #   bug: Bug Fixes
-    #   zap: Performance Improvements
-    #   recycle: Code Refactoring
   header:
-    pattern: "^:(\\w*)\\:\\s(.*)$"
+    pattern: "^(.*)$"
     pattern_maps:
-      - Type
       - Subject
   notes:
     keywords:

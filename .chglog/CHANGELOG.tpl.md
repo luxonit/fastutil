@@ -4,19 +4,16 @@ This changelog records changes made in the Luxonit fork of fastutil.
 It is maintained as a prominent notice of modifications for this Apache License 2.0 distribution.
 Upstream project: <https://github.com/vigna/fastutil>
 
-{{ if .Unreleased.CommitGroups }}
+{{ if .Unreleased.Commits }}
 
 ## {{ if .Versions }}[Unreleased]({{ $.Info.RepositoryURL }}/compare/{{ (index .Versions 0).Tag.Name }}...HEAD){{ else }}Unreleased{{ end }}
 
-{{ range .Unreleased.CommitGroups }}
+### Unreleased Changes
 
-### Unreleased {{ .Title }}
-
-{{ range .Commits }}
+{{ range .Unreleased.Commits }}
 
 - {{ .Subject }}
 
-{{ end }}
 {{ end }}
 
 {{ if .Unreleased.RevertCommits }}
@@ -56,14 +53,15 @@ The merged pull requests below identify the modifications included in this unrel
 {{ end }}
 
 {{ range .Versions }}
+{{ if .Tag.Previous }}
 
-## {{ if .Tag.Previous }}[{{ .Tag.Name }}]({{ $.Info.RepositoryURL }}/compare/{{ .Tag.Previous.Name }}...{{ .Tag.Name }}){{ else }}{{ .Tag.Name }}{{ end }}
+## [{{ .Tag.Name }}]({{ $.Info.RepositoryURL }}/compare/{{ .Tag.Previous.Name }}...{{ .Tag.Name }})
 
 > {{ datetime "2006-01-02" .Tag.Date }}
 
-{{ range .CommitGroups }}
+{{ if .Commits }}
 
-### {{ .Title }}
+### Changes
 
 {{ range .Commits }}
 
@@ -103,6 +101,7 @@ The merged pull requests below identify the modifications included in this versi
 
 {{ range .Notes }}
 {{ .Body }}
+{{ end }}
 {{ end }}
 {{ end }}
 {{ end }}

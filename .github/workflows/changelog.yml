@@ -77,8 +77,16 @@ jobs:
                 exit 1
               fi
             fi
+          fi
 
-            git-chglog --config .chglog/config.yml -o CHANGELOG.md "..${resolved_tag}"
+          if ! git tag -l 'v*' | grep -q .; then
+            echo "No fork release tags were found." >&2
+            echo "Create a baseline tag such as v0.0.0 on the commit that should start your fork changelog." >&2
+            exit 1
+          fi
+
+          if [[ -n "${TAG_VERSION:-}" ]]; then
+            git-chglog --config .chglog/config.yml -o CHANGELOG.md
           else
             git-chglog --config .chglog/config.yml --next-tag unreleased -o CHANGELOG.md
           fi
