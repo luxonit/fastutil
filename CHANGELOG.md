@@ -19,6 +19,10 @@ Upstream project: <https://github.com/vigna/fastutil>
 
 
 
+- update changelog ([#5](https://github.com/luxonit/fastutil/issues/5))
+
+
+
 - Fix changelog to use v0.0.0 tags
 
 
