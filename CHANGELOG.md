@@ -6,10 +6,21 @@ Upstream project: <https://github.com/vigna/fastutil>
 
 
 
-## [v0.0.0](https://github.com/luxonit/fastutil/compare/8.5.16...v0.0.0)
+
+
+## unreleased
 
 > 2026-05-06
 
+
+
+
+
+### Reverts
+
+
+
+- Optimize ArrayList
 
 
 
@@ -34,26 +45,6 @@ The merged pull requests below identify the modifications included in this versi
 
 
 
-
-
-
-
-## [8.5.16](https://github.com/luxonit/fastutil/compare/8.5.15...8.5.16)
-
-> 2025-06-22
-
-
-
-
-
-
-
-### Pull Requests
-
-The merged pull requests below identify the modifications included in this version.
-
-
-
 - Merge pull request [#356](https://github.com/luxonit/fastutil/issues/356) from magicprinc/ArrayFIFOQueueWithMethods
 
 
@@ -70,48 +61,6 @@ The merged pull requests below identify the modifications included in this versi
 
 
 
-
-
-
-
-## [8.5.15](https://github.com/luxonit/fastutil/compare/8.5.14...8.5.15)
-
-> 2024-10-19
-
-
-
-
-
-
-
-
-
-
-## [8.5.14](https://github.com/luxonit/fastutil/compare/8.5.13...8.5.14)
-
-> 2024-07-21
-
-
-
-
-
-### Reverts
-
-
-
-- Optimize ArrayList
-
-
-
-
-
-
-### Pull Requests
-
-The merged pull requests below identify the modifications included in this version.
-
-
-
 - Merge pull request [#326](https://github.com/luxonit/fastutil/issues/326) from vigna/revert-316-optimize-array-list
 
 
@@ -125,26 +74,6 @@ The merged pull requests below identify the modifications included in this versi
 
 
 - Merge pull request [#325](https://github.com/luxonit/fastutil/issues/325) from Ampflower/master
-
-
-
-
-
-
-
-## [8.5.13](https://github.com/luxonit/fastutil/compare/8.5.12...8.5.13)
-
-> 2024-02-07
-
-
-
-
-
-
-
-### Pull Requests
-
-The merged pull requests below identify the modifications included in this version.
 
 
 
@@ -176,123 +105,11 @@ The merged pull requests below identify the modifications included in this versi
 
 
 
-
-
-
-
-## [8.5.12](https://github.com/luxonit/fastutil/compare/8.5.11...8.5.12)
-
-> 2023-03-07
-
-
-
-
-
-
-
-
-
-
-## [8.5.11](https://github.com/luxonit/fastutil/compare/8.5.9...8.5.11)
-
-> 2022-12-09
-
-
-
-
-
-
-
-### Pull Requests
-
-The merged pull requests below identify the modifications included in this version.
-
-
-
 - Merge pull request [#281](https://github.com/luxonit/fastutil/issues/281) from richardstartin/faster-next-pow2
 
 
 
-
-
-
-
-## [8.5.9](https://github.com/luxonit/fastutil/compare/8.5.8...8.5.9)
-
-> 2022-09-26
-
-
-
-
-
-
-
-### Pull Requests
-
-The merged pull requests below identify the modifications included in this version.
-
-
-
 - Merge pull request [#276](https://github.com/luxonit/fastutil/issues/276) from hpple/master
-
-
-
-
-
-
-
-## [8.5.8](https://github.com/luxonit/fastutil/compare/8.5.7...8.5.8)
-
-> 2022-02-10
-
-
-
-
-
-
-
-
-
-
-## [8.5.7](https://github.com/luxonit/fastutil/compare/8.5.6...8.5.7)
-
-> 2022-02-09
-
-
-
-
-
-
-
-
-
-
-## [8.5.6](https://github.com/luxonit/fastutil/compare/8.5.5...8.5.6)
-
-> 2021-09-07
-
-
-
-
-
-
-
-
-
-
-## [8.5.5](https://github.com/luxonit/fastutil/compare/8.5.4...8.5.5)
-
-> 2021-09-07
-
-
-
-
-
-
-
-### Pull Requests
-
-The merged pull requests below identify the modifications included in this version.
 
 
 
@@ -312,60 +129,7 @@ The merged pull requests below identify the modifications included in this versi
 
 
 
-
-
-
-
-## [8.5.4](https://github.com/luxonit/fastutil/compare/8.5.3...8.5.4)
-
-> 2021-03-28
-
-
-
-
-
-
-
-
-
-
-## [8.5.3](https://github.com/luxonit/fastutil/compare/8.5.2...8.5.3)
-
-> 2021-03-28
-
-
-
-
-
-
-
-### Pull Requests
-
-The merged pull requests below identify the modifications included in this version.
-
-
-
 - Merge pull request [#242](https://github.com/luxonit/fastutil/issues/242) from techsy730/OfMethodCleanup
-
-
-
-
-
-
-
-## [8.5.2](https://github.com/luxonit/fastutil/compare/8.5.1...8.5.2)
-
-> 2021-02-01
-
-
-
-
-
-
-
-### Pull Requests
-
-The merged pull requests below identify the modifications included in this version.
 
 
 
@@ -374,39 +138,6 @@ The merged pull requests below identify the modifications included in this versi
 
 
 - Merge pull request [#232](https://github.com/luxonit/fastutil/issues/232) from techsy730/LinkedHashMapForEachRemaining
-
-
-
-
-
-
-
-## [8.5.1](https://github.com/luxonit/fastutil/compare/8.5.0...8.5.1)
-
-> 2021-01-29
-
-
-
-
-
-
-
-
-
-
-## [8.5.0](https://github.com/luxonit/fastutil/compare/8.4.4...8.5.0)
-
-> 2021-01-29
-
-
-
-
-
-
-
-### Pull Requests
-
-The merged pull requests below identify the modifications included in this version.
 
 
 
@@ -534,47 +265,7 @@ The merged pull requests below identify the modifications included in this versi
 
 
 
-
-
-
-
-## [8.4.4](https://github.com/luxonit/fastutil/compare/8.4.3...8.4.4)
-
-> 2020-12-01
-
-
-
-
-
-
-
-### Pull Requests
-
-The merged pull requests below identify the modifications included in this version.
-
-
-
 - Merge pull request [#178](https://github.com/luxonit/fastutil/issues/178) from techsy730/TypeSpecificBulkMethods
-
-
-
-
-
-
-
-## [8.4.3](https://github.com/luxonit/fastutil/compare/8.4.2...8.4.3)
-
-> 2020-11-01
-
-
-
-
-
-
-
-### Pull Requests
-
-The merged pull requests below identify the modifications included in this version.
 
 
 
@@ -582,97 +273,11 @@ The merged pull requests below identify the modifications included in this versi
 
 
 
-
-
-
-
-## [8.4.2](https://github.com/luxonit/fastutil/compare/8.4.1...8.4.2)
-
-> 2020-09-18
-
-
-
-
-
-
-
-
-
-
-## [8.4.1](https://github.com/luxonit/fastutil/compare/8.4.0...8.4.1)
-
-> 2020-08-09
-
-
-
-
-
-
-
-
-
-
-## [8.4.0](https://github.com/luxonit/fastutil/compare/8.3.1...8.4.0)
-
-> 2020-07-21
-
-
-
-
-
-
-
-### Pull Requests
-
-The merged pull requests below identify the modifications included in this version.
-
-
-
 - Merge pull request [#143](https://github.com/luxonit/fastutil/issues/143) from Spottedleaf/patch-1
 
 
 
-
-
-
-
-## [8.3.1](https://github.com/luxonit/fastutil/compare/8.3.0...8.3.1)
-
-> 2020-02-11
-
-
-
-
-
-
-
-### Pull Requests
-
-The merged pull requests below identify the modifications included in this version.
-
-
-
 - Merge pull request [#134](https://github.com/luxonit/fastutil/issues/134) from techsy730/list_sort
-
-
-
-
-
-
-
-## [8.3.0](https://github.com/luxonit/fastutil/compare/8.2.3...8.3.0)
-
-> 2019-08-02
-
-
-
-
-
-
-
-### Pull Requests
-
-The merged pull requests below identify the modifications included in this version.
 
 
 
@@ -688,65 +293,6 @@ The merged pull requests below identify the modifications included in this versi
 
 
 
-
-
-
-
-## [8.2.3](https://github.com/luxonit/fastutil/compare/8.2.2...8.2.3)
-
-> 2019-06-10
-
-
-
-
-
-
-
-
-
-
-## [8.2.2](https://github.com/luxonit/fastutil/compare/8.2.1...8.2.2)
-
-> 2018-09-09
-
-
-
-
-
-
-
-
-
-
-## [8.2.1](https://github.com/luxonit/fastutil/compare/8.2.0...8.2.1)
-
-> 2018-05-29
-
-
-
-
-
-
-
-
-
-
-## [8.2.0](https://github.com/luxonit/fastutil/compare/8.1.1...8.2.0)
-
-> 2018-05-28
-
-
-
-
-
-
-
-### Pull Requests
-
-The merged pull requests below identify the modifications included in this version.
-
-
-
 - Merge pull request [#79](https://github.com/luxonit/fastutil/issues/79) from vigna/dependency-script
 
 
@@ -759,60 +305,7 @@ The merged pull requests below identify the modifications included in this versi
 
 
 
-
-
-
-
-## [8.1.1](https://github.com/luxonit/fastutil/compare/8.1.0...8.1.1)
-
-> 2017-11-22
-
-
-
-
-
-
-
-### Pull Requests
-
-The merged pull requests below identify the modifications included in this version.
-
-
-
 - Merge pull request [#77](https://github.com/luxonit/fastutil/issues/77) from loriopatrick/patch-1
-
-
-
-
-
-
-
-## [8.1.0](https://github.com/luxonit/fastutil/compare/8.0.0...8.1.0)
-
-> 2017-06-21
-
-
-
-
-
-
-
-
-
-
-## [8.0.0](https://github.com/luxonit/fastutil/compare/7.2.1...8.0.0)
-
-> 2017-06-13
-
-
-
-
-
-
-
-### Pull Requests
-
-The merged pull requests below identify the modifications included in this version.
 
 
 
@@ -836,99 +329,7 @@ The merged pull requests below identify the modifications included in this versi
 
 
 
-
-
-
-
-## [7.2.1](https://github.com/luxonit/fastutil/compare/7.2.0...7.2.1)
-
-> 2017-06-04
-
-
-
-
-
-
-
-
-
-
-## [7.2.0](https://github.com/luxonit/fastutil/compare/7.1.0...7.2.0)
-
-> 2017-03-30
-
-
-
-
-
-
-
-
-
-
-## [7.1.0](https://github.com/luxonit/fastutil/compare/7.0.13...7.1.0)
-
-> 2017-02-14
-
-
-
-
-
-
-
-
-
-
-## [7.0.13](https://github.com/luxonit/fastutil/compare/7.0.12...7.0.13)
-
-> 2016-08-21
-
-
-
-
-
-
-
-
-
-
-## [7.0.12](https://github.com/luxonit/fastutil/compare/7.0.11...7.0.12)
-
-> 2016-04-06
-
-
-
-
-
-
-
-### Pull Requests
-
-The merged pull requests below identify the modifications included in this version.
-
-
-
 - Merge pull request [#36](https://github.com/luxonit/fastutil/issues/36) from rossjudson/rossjudson-patch-1
-
-
-
-
-
-
-
-## [7.0.11](https://github.com/luxonit/fastutil/compare/7.0.10...7.0.11)
-
-> 2016-03-12
-
-
-
-
-
-
-
-### Pull Requests
-
-The merged pull requests below identify the modifications included in this version.
 
 
 
@@ -937,26 +338,6 @@ The merged pull requests below identify the modifications included in this versi
 
 
 - Merge pull request [#30](https://github.com/luxonit/fastutil/issues/30) from DevFactory/staging/remove-dead-stores-fix-1
-
-
-
-
-
-
-
-## [7.0.10](https://github.com/luxonit/fastutil/compare/7.0.7...7.0.10)
-
-> 2016-01-09
-
-
-
-
-
-
-
-### Pull Requests
-
-The merged pull requests below identify the modifications included in this version.
 
 
 
@@ -972,66 +353,7 @@ The merged pull requests below identify the modifications included in this versi
 
 
 
-
-
-
-
-## [7.0.7](https://github.com/luxonit/fastutil/compare/7.0.6...7.0.7)
-
-> 2015-08-07
-
-
-
-
-
-
-
-### Pull Requests
-
-The merged pull requests below identify the modifications included in this version.
-
-
-
 - Merge pull request [#2](https://github.com/luxonit/fastutil/issues/2) from kno10/patch-1
-
-
-
-
-
-
-
-## [7.0.6](https://github.com/luxonit/fastutil/compare/7.0.5...7.0.6)
-
-> 2015-05-22
-
-
-
-
-
-
-
-
-
-
-## [7.0.5](https://github.com/luxonit/fastutil/compare/7.0.4...7.0.5)
-
-> 2015-05-21
-
-
-
-
-
-
-
-
-
-
-## 7.0.4
-
-> 2015-05-11
-
-
-
 
 
 
