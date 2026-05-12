@@ -241,6 +241,9 @@ public class OPEN_DOUBLE_HASH_SET KEY_GENERIC extends ABSTRACT_SET KEY_GENERIC i
 		free = n;
 		maxFill = HashCommon.maxFill(n, f);
 		key = KEY_GENERIC_ARRAY_CAST new KEY_TYPE[n + 1];
+#if KEYS_PRIMITIVE
+		removedBitSet = createBitSet(n);
+#endif
 #ifdef Linked
 		link = new long[n + 1];
 #endif
@@ -1894,8 +1897,7 @@ SUPPRESS_WARNINGS_KEY_UNCHECKED
 	SUPPRESS_WARNINGS_KEY_UNCHECKED
 	protected void rehash(final int newN) {
 		final KEY_GENERIC_TYPE[] key = this.key;
-		final int length = newN + 1;
-		final KEY_GENERIC_TYPE[] newKey = KEY_GENERIC_ARRAY_CAST new KEY_TYPE[length];
+		final KEY_GENERIC_TYPE[] newKey = KEY_GENERIC_ARRAY_CAST new KEY_TYPE[newN + 1];
 
 		int i = this.n, pos;
 		for(int j = realSize(); j-- != 0; ) {
@@ -1934,7 +1936,7 @@ SUPPRESS_WARNINGS_KEY_UNCHECKED
 		this.free = newN - this.size;
 		this.key = newKey;
 #if KEYS_PRIMITIVE
-		this.removedBitSet = new long[(length + 63) >>> 6];
+		this.removedBitSet = createBitSet(newN);
 #endif
 
 #ifdef Linked
@@ -2060,20 +2062,17 @@ SUPPRESS_WARNINGS_KEY_UNCHECKED
 	SUPPRESS_WARNINGS_KEY_UNCHECKED
 	private void readObject(java.io.ObjectInputStream s) throws java.io.IOException, ClassNotFoundException {
 		s.defaultReadObject();
-
 		final int size = this.size;
 		this.size = 0;
 		n = HashCommon.primeSize(size, f);
 		maxFill = HashCommon.maxFill(n, f);
-		this.free = this.n;
-
-		final int length = this.n + 1;
-		this.key = KEY_GENERIC_ARRAY_CAST new KEY_TYPE[length];
+		this.free = n;
+		this.key = KEY_GENERIC_ARRAY_CAST new KEY_TYPE[n + 1];
 		#if KEYS_PRIMITIVE
-    		this.removedBitSet = new long[(length + 63) >>> 6];
+    		this.removedBitSet = createBitSet(n);
     #endif
 #ifdef Linked
-		final long link[] = this.link = new long[length];
+		final long link[] = this.link = new long[n + 1];
 		int prev = -1;
 		first = last = -1;
 #endif
@@ -2109,6 +2108,10 @@ SUPPRESS_WARNINGS_KEY_UNCHECKED
 	}
 
 #if KEYS_PRIMITIVE
+	private static long[] createBitSet(final int length) {
+	  return new long[(length + 63) >>> 6];
+	}
+
 	private boolean isRemoved(final int i) {
 	  return (this.removedBitSet[i >>> 6] & (1L << (i & 63))) != 0;
 	}
