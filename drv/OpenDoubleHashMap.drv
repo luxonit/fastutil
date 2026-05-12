@@ -267,11 +267,10 @@ public class OPEN_DOUBLE_HASH_MAP KEY_VALUE_GENERIC extends ABSTRACT_MAP KEY_VAL
 		minN = n = HashCommon.primeSize(expected, f);
 		free = n;
 		maxFill = HashCommon.maxFill(n, f);
-		final int length = n + 1;
-		key = KEY_GENERIC_ARRAY_CAST new KEY_TYPE[length];
-		value = VALUE_GENERIC_ARRAY_CAST new VALUE_TYPE[length];
+		key = KEY_GENERIC_ARRAY_CAST new KEY_TYPE[n + 1];
+		value = VALUE_GENERIC_ARRAY_CAST new VALUE_TYPE[n + 1];
 		#if KEYS_PRIMITIVE
-		  removedBitSet = new long[(length + 63) >>> 6];
+		  removedBitSet = createBitSet(n);
     #endif
 	}
 
@@ -1612,9 +1611,8 @@ public class OPEN_DOUBLE_HASH_MAP KEY_VALUE_GENERIC extends ABSTRACT_MAP KEY_VAL
 	protected void rehash(final int newN) {
 		final KEY_GENERIC_TYPE[] key = this.key;
 		final VALUE_GENERIC_TYPE[] value = this.value;
-		final int length = newN + 1;
-		final KEY_GENERIC_TYPE[] newKey = KEY_GENERIC_ARRAY_CAST new KEY_TYPE[length];
-		final VALUE_GENERIC_TYPE[] newValue = VALUE_GENERIC_ARRAY_CAST new VALUE_TYPE[length];
+		final KEY_GENERIC_TYPE[] newKey = KEY_GENERIC_ARRAY_CAST new KEY_TYPE[newN + 1];
+		final VALUE_GENERIC_TYPE[] newValue = VALUE_GENERIC_ARRAY_CAST new VALUE_TYPE[newN + 1];
 
 		int i = this.n, pos;
 		for(int j = realSize(); j-- != 0; ) {
@@ -1656,7 +1654,7 @@ public class OPEN_DOUBLE_HASH_MAP KEY_VALUE_GENERIC extends ABSTRACT_MAP KEY_VAL
 		this.key = newKey;
 		this.value = newValue;
 #if KEYS_PRIMITIVE
-		this.removedBitSet = new long[(length + 63) >>> 6];
+		this.removedBitSet = createBitSet(newN);
 #endif
 	}
 
@@ -1755,12 +1753,11 @@ public class OPEN_DOUBLE_HASH_MAP KEY_VALUE_GENERIC extends ABSTRACT_MAP KEY_VAL
 		this.size = 0;
 		this.n = HashCommon.primeSize(size, f);
 		this.maxFill = HashCommon.maxFill(n, f);
-		this.free = this.n;
-		final int length = this.n + 1;
-		this.key = KEY_GENERIC_ARRAY_CAST new KEY_TYPE[length];
-		this.value = VALUE_GENERIC_ARRAY_CAST new VALUE_TYPE[length];
+		this.free = n;
+		this.key = KEY_GENERIC_ARRAY_CAST new KEY_TYPE[n + 1];
+		this.value = VALUE_GENERIC_ARRAY_CAST new VALUE_TYPE[n + 1];
 #if KEYS_PRIMITIVE
-		this.removedBitSet = new long[(length + 63) >>> 6];
+		this.removedBitSet = createBitSet(n);
 #endif
 
 		KEY_GENERIC_TYPE k;
@@ -1777,6 +1774,10 @@ public class OPEN_DOUBLE_HASH_MAP KEY_VALUE_GENERIC extends ABSTRACT_MAP KEY_VAL
 	}
 
 #if KEYS_PRIMITIVE
+	private static long[] createBitSet(final int length) {
+	  return new long[(length + 63) >>> 6];
+	}
+
 	private boolean isRemoved(final int i) {
 	  return (this.removedBitSet[i >>> 6] & (1L << (i & 63))) != 0;
 	}
