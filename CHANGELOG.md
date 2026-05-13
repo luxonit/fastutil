@@ -9,6 +9,34 @@ Upstream project: <https://github.com/vigna/fastutil>
 
 
 
+## [unreleased](https://github.com/luxonit/fastutil/compare/v1.0.0...unreleased)
+
+> 2026-05-12
+
+
+
+### Changes
+
+
+
+- Fixed OpenDoubleHashSet/Map generation for primitives
+
+
+
+- update changelog
+
+
+
+
+
+
+
+
+
+
+
+
+
 ## [v1.0.0](https://github.com/luxonit/fastutil/compare/v0.0.0...v1.0.0)
 
 > 2026-05-06
